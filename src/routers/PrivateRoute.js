@@ -9,6 +9,7 @@ const PrivateRoute = ({ children }) => {
   const { user } = useContext(AuthContext);
   console.log(location);
   localStorage.setItem("lastpath", location.pathname);
+  localStorage.setItem("buscar", location.search);
 
   return user.logged ? children : <Navigate to="/login" />;
 };

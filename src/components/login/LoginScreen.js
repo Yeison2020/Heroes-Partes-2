@@ -6,12 +6,13 @@ export const LoginScreen = () => {
   console.log(types);
   const navigate = useNavigate();
   const lastPath = localStorage.getItem("lastpath") || "/marvel";
+  const lastSearch = localStorage.getItem("buscar") || "";
   console.log(lastPath);
 
   const { dispatch } = useContext(AuthContext);
 
   const handleLogin = () => {
-    navigate(lastPath, {
+    navigate(lastPath + lastSearch, {
       replace: true,
     });
 
