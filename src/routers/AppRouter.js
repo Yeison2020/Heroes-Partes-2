@@ -4,6 +4,7 @@ import { LoginScreen } from "../components/login/LoginScreen";
 
 import { DashboardRoutes } from "./DashboardRoutes";
 import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 
 export const AppRouter = () => {
   // Here I'm setting my private routes just for the user when They're logged in.
@@ -12,7 +13,15 @@ export const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<LoginScreen />} />
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <LoginScreen />
+            </PublicRoute>
+          }
+        />
+
         <Route
           path="/*"
           element={
