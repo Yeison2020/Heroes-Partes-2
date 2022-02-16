@@ -5,6 +5,7 @@ import { AuthContext } from "../../auth/authContext";
 export const LoginScreen = () => {
   console.log(types);
   const navigate = useNavigate();
+
   const { dispatch } = useContext(AuthContext);
 
   const handleLogin = () => {
