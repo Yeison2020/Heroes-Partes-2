@@ -5,11 +5,13 @@ import { AuthContext } from "../../auth/authContext";
 export const LoginScreen = () => {
   console.log(types);
   const navigate = useNavigate();
+  const lastPath = localStorage.getItem("lastpath");
+  console.log(lastPath);
 
   const { dispatch } = useContext(AuthContext);
 
   const handleLogin = () => {
-    navigate("/marvel", {
+    navigate(lastPath, {
       replace: true,
     });
 
