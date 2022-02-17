@@ -5,6 +5,7 @@
 import Enzyme from "enzyme";
 import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
 import { createSerializer } from "enzyme-to-json";
-import "@testing-library/jest-dom";
+// This part can be remove, because I'm using my others dependancies.
+// import "@testing-library/jest-dom";
 Enzyme.configure({ adapter: new Adapter() });
 expect.addSnapshotSerializer(createSerializer({ mode: "deep" }));
